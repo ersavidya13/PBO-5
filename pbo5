@@ -1,0 +1,52 @@
+// Contoh penggunaan modifier access pada properti dan metode
+Class MyClass {
+Public var publicProperty: Int = 10
+Private var privateProperty: Int = 20
+
+Public fun publicMethod() {
+Println(“Public method”)
+}
+
+Private fun privateMethod() {
+Println(“Private method”)
+}
+}
+
+Fun main() {
+Val obj = MyClass()
+Println(obj.publicProperty) // Output: 10
+Obj.publicMethod() // Output: Public method
+
+// Tidak bisa diakses karena private
+// println(obj.privateProperty)
+// obj.privateMethod()
+}
+
+// Contoh penggunaan modifier non access pada properti dan metode
+Open class ParentClass {
+Open var variable: Int = 10
+Final fun finalMethod() {
+Println(“Final method”)
+}
+
+Abstract fun abstractMethod()
+}
+
+Class ChildClass : ParentClass() {
+Override var variable: Int = 20
+
+// Tidak bisa di-override karena final
+// override fun finalMethod() {
+// println(“Override final method”)
+// }
+
+Override fun abstractMethod() {
+Println(“Implementasi abstract method”)
+}
+}
+
+Fun main() {
+Val obj = ChildClass()
+Obj.abstractMethod() // Output: Implementasi abstract method
+Println(obj.variable) // Output: 20
+}
